@@ -49,7 +49,9 @@ class bookcar:
         try:
             new_total=[]
             for k in self.total:
-                if name in k['name']:
+                # if name in k['name']:
+                #     continue
+                if name in k.name:
                     continue
                 new_total.append(k)
             self.total=new_total
