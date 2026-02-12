@@ -16,14 +16,7 @@ class bookcar:
         self.totalsum=0     #算金額用
 
     def add(self,name,price,qty): #新增項目
-        # sum=price*qty
-        # for e in range(0,len(self.total)):
-        #     if self.total[e]['name']==name:
-        #         self.total[e]["qty"]+=qty
-        #         self.total[e]["sum"]+=sum
-        #         return 1
         
-        # self.total.append({"name":name,"price":price,"qty":qty,"sum":sum})
         #以下是物件版本
         for item in self.total:
             if item.name == name:
@@ -34,10 +27,7 @@ class bookcar:
     def show(self): #顯示購物車
         finish=""
         self.totalsum=0 #總金額初始化
-        # for d in range(0,len(self.total)):
-        #    finish+=f"{self.total[d]['name']}-價格:{self.total[d]['price']}-數量:{self.total[d]['qty']}-小記:{self.total[d]['sum']}\n" 
-        #    self.totalsum+=self.total[d]["sum"] #計算總金額
-        # finish+=f"==============共{self.totalsum}元===================="
+        
         for item in self.total:
             finish+=f"{item.name} -數量:{item.qty}  - 單價 {item.price} - 小計 {item.subtotal()}\n"
             self.totalsum+=item.subtotal() #計算總金額
@@ -49,8 +39,6 @@ class bookcar:
         try:
             new_total=[]
             for k in self.total:
-                # if name in k['name']:
-                #     continue
                 if name in k.name:
                     continue
                 new_total.append(k)
